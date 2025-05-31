@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Foxicom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/static/images/info.png">
+    <style>
+
+        @font-face {
+            font-family: gum;
+            src: url(/static/fonts/Gumzilla\ Regular.otf);
+        }
+
+        body {
+            background: linear-gradient(180deg, hsl(330, 88%, 90%) 0%, hsl(210, 40%, 98%) 100%);
+            font-family: gum;
+            height: 83vh;
+        }
+        .about-card {
+            background: linear-gradient(120deg, hsl(53, 40%, 96%), hsl(0, 0%, 100%));
+            border-radius: 22px;
+            box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.09);
+            padding: 40px 32px 32px 32px;
+            max-width: 700px;
+            margin: 140px auto 0 auto;
+            animation: showAnimation 1.5s ease-in-out;
+        }
+        @keyframes showAnimation{
+            from{ 
+                opacity: 0;
+            }
+            to{ 
+                opacity: 1;
+            }
+        }
+
+        @keyframes YAnimation{
+            from{ 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to{ 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .about-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: hsl(31, 90%, 61%);
+            text-align: center;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .about-logo {
+            display: block;
+            margin: 0 auto 18px auto;
+            height: 70px;
+        }
+        .about-desc {
+            font-size: 1.15rem;
+            color: hsl(220, 20%, 25%);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .about-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .team-section {
+            margin-top: 36px;
+            text-align: center;
+        }
+        .team-title {
+            font-size: 1.3rem;
+            color: hsl(31, 90%, 61%);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-section img{
+            height: 263px;
+            animation: YAnimation 1.6s ease-in-out;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 24px;
+            left: 32px;
+            color: hsl(211, 73%, 27%);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: ease 0.5s;
+            display: flex;
+            animation: showAnimation 1.3s ease;
+        }
+        .back-link h2{
+            font-size: 21px;
+            transition: ease 0.5s;
+            font-weight: 100;
+        }
+        .back-link:hover h2{
+            transform: rotateZ(9deg) ;
+            transition: ease 0.5s;
+        }
+        .back-link:hover img{
+            transform: rotateZ(-17deg) ;
+            transition: ease 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="window.history.back(); return false;" class="back-link">
+        <img src="/static/images/left.png" alt="Back" style="height:20px; vertical-align:middle; margin-right:6px;">
+        <h2>Back</h2>
+    </a>
+
+    <div class="about-card">
+        <img src="/static/images/foxicom-logo.png" alt="Foxicom Logo" class="about-logo" onerror="this.style.display='none'">
+        <div class="about-title">About Us</div>
+        <div class="about-desc">
+            <!-- ai es tu gindat sul wasalet ubralod gavakete rom mainc araa realuri xo-->
+            This website was created for mziuri.ge and we are glad to see that you are reviewing our project :)
+        </div>
+        <div class="team-section">
+            <div class="team-title">...</div>
+            <img src="/static/images/car.png">
+        </div>
+    </div>
+</body>
+</html>

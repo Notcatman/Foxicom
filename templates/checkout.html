@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Foxicom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/static/images/card.png">
+    <style>
+
+        @font-face {
+            font-family: ba;
+            src: url(/static/fonts/Sonorous.otf);
+        }
+        @font-face {
+            font-family: gum;
+            src: url(/static/fonts/Gumzilla\ Regular.otf);
+        }
+
+        @keyframes showAnimation{
+            from{
+                opacity: 0;
+            }to{
+                opacity: 1;                
+            }
+        }
+
+        *::selection{
+            background: transparent;
+        }
+
+
+        html {
+            height: 100%;
+        }
+        
+        body {
+            background: linear-gradient(120deg, hsl(210, 40%, 98%) 0%, hsl(43, 92%, 86%) 100%);
+            min-height: 100vh;
+            font-family: gum;
+            font-weight: 100;
+            letter-spacing: 1px;
+            overflow: hidden;
+        }
+
+        .checkout-card {
+            background: hsl(0, 0%, 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.1);
+            padding: 36px 32px 28px 32px;
+            max-width: 480px;
+            margin: auto;
+            margin-top: 150px;
+            animation: showAnimation 1.5s ease;
+        }
+
+        .checkout-title {
+            font-size: 39px;
+            font-weight: 100;
+            color: hsl(31, 90%, 61%);
+            text-align: center;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.294);
+            transition: ease 0.5s;
+        }
+
+        .checkout-card .checkout-title:hover{
+            transform: rotateZ(1deg) translateY(-5px);
+            transition: ease 0.5s;
+            cursor: context-menu;
+        }
+
+        .cart-list {
+            margin-bottom: 24px;
+        }
+        .cart-list li {
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid hsl(42, 58%, 89%);
+        }
+        .cart-list li:last-child {
+            border-bottom: none;
+        }
+        .total-row {
+            font-size: 20px;
+            font-weight: 100;
+            color: hsl(28, 80%, 52%);
+            text-align: right;
+            margin-bottom: 24px;
+            text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.156);
+        }
+        .btn-pay {
+            background: linear-gradient(90deg, hsl(31, 88%, 62%) 0%, hsl(28, 80%, 52%) 100%);
+            border: none;
+            border-radius: 24px;
+            color: hsl(0, 0%, 100%);
+            text-shadow: 1px 2px 3px hsla(0, 0%, 0%, 0.439);
+            font-weight: 100;
+            font-size: 19px;
+            padding: 12px 0;
+            width: 100%;
+            box-shadow: 0 2px 8px hsla(31, 91%, 61%, 0.12);
+            transition: ease-in-out 0.3s;
+        }
+        .btn-pay:hover {
+            color: hsl(208, 100%, 97%);
+            transform: translateY(-5px);
+            box-shadow: 3px 3px 7px hsla(0, 0%, 0%, 0.358);
+            transition: ease-in-out 0.3s;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 24px;
+            left: 32px;
+            color: hsl(31, 90%, 61%);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: ease 0.5s;
+            display: flex;
+            animation: showAnimation 1s ease;
+        }
+        .back-link h2{
+            font-size: 21px;
+            transition: ease 0.5s;
+            font-weight: 100;
+        }
+        .back-link:hover h2{
+            transform: rotateZ(9deg) ;
+            transition: ease 0.5s;
+        }
+        .back-link:hover img{
+            transform: rotateZ(-17deg) ;
+            transition: ease 0.5s;
+        }
+
+        .checkout-card img{
+            transition: ease 0.5s;
+        }
+
+        .checkout-card img:hover{
+            height: 123px;
+            margin-right: 10px;
+            transform: rotateZ(-1deg) translateY(-5px);
+            transition: ease 0.5s;
+            cursor: context-menu;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <a href="#" onclick="window.history.back(); return false;" class="back-link">
+        <img src="/static/images/left-orange.png" alt="Back" style="height:20px; vertical-align:middle; margin-right:6px;">
+        <h2>Back</h2>
+    </a>
+
+    <div class="checkout-card">
+        <div class="d-flex align-items-center justify-content-center mb-4" style="gap: 18px;">
+            <img src="/static/images/pay.png" alt="Foxicom Logo" class="foxi-logo" style="margin:0; height:153px;" onerror="this.style.display='none'">
+            <div class="checkout-title" style="margin-bottom:0;">Checkout</div>
+        </div>
+        <ul class="cart-list list-unstyled">
+            {% for item in cart %}
+                <li>
+                    <span>{{ item.title() }}</span>
+                    <span class="badge bg-warning text-dark" style="font-weight: 100; font-size: medium;">${{ course_cost.get(item, 0) }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="total-row">
+            Total: ${{ total }}
+        </div>
+        <form method="POST">
+            <button type="submit" class="btn btn-pay">Pay Now</button>
+        </form>
+    </div>
+</body>
+</html>

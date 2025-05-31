@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxicom</title>
-    <link rel="icon" href="/static/images/foxsicon.png">
+    <title>Music courses | Foxicom</title>
+    <link rel="icon" href="/static/images/foxs-guitar.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
@@ -69,6 +69,15 @@
 
     .d1 .foxx{
         animation: YAnimation 1.6s ease;
+    }
+
+    .d1 .mc{
+        position: absolute;
+        color: hsl(325, 100%, 73%);
+        text-shadow: 0 -4px 1px hsl(251, 39%, 20%);
+        margin-top: 125px;
+        margin-left: 250px;
+        animation: YAnimation 1.5s ease;
     }
 
 
@@ -140,16 +149,16 @@
     }
 
     .d2 .tex{
-        width: 512px;
-        height: 601px;
+        width: 704px;
+        height: 541px;
         padding: 25px;
         border-radius: 30px;
-        border: 2px groove hsl(199, 75%, 53%);
+        border: 2px groove hsl(339, 75%, 53%);
         text-align: center;
-        background: linear-gradient(180deg, hsl(179, 46%, 80%), hsl(329, 68%, 94%)) ;
+        background: linear-gradient(180deg, hsl(336, 86%, 72%), hsl(329, 68%, 94%)) ;
         position: absolute;
         top: 35%;
-        left: 10%;
+        right: 5%;
         z-index: 1;
         transition: ease 0.4s;
         animation: showAnimation 1s ease;
@@ -163,9 +172,10 @@
     }
 
     .d2 .tex button{
+        margin-top: 30px;
         width: 220px;
         height: 50px;
-        background: linear-gradient(90deg, hsl(202, 51%, 36%), hsl(202, 45%, 52%));
+        background: linear-gradient(90deg, hsl(332, 42%, 28%), hsl(330, 47%, 45%));
         border-radius: 50px;
         border: 0px;
         font-family: gum;
@@ -226,7 +236,7 @@
     @keyframes showAnimation{
         from{
             opacity: 0;
-            transform: translateY(200px) scale(0.3);
+            transform: translateY(100px) scale(0.3);
         }to{
             opacity: 1;
             transform: translateY(0) scale(1);
@@ -261,174 +271,222 @@
         }
     }
 
-    @keyframes autoblurAnimation{
-        0%{
-            filter: blur(3px);
-            width: 800px;
-        }
-        45%, 55%{
-            filter: blur(0px);
-            width: 1080px;
-        }
-        100%{
-            filter: blur(3px);
-            width: 800px;
-        }
-    }
-
-
 
     .d4{
-        height: 1900px;
+        height: 3260px;
+        
     }
 
+    .d4 .hov{
+            transition: ease-in-out 0.4s;
+        }
 
-    .d4 .python {
+    .d4 .guitar:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }
+
+    .d4 .piano:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }
+
+    .d4 .bass:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }   
+
+    .d4 .electro:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    } 
+
+
+    .d4 .guitar {
         position: relative;
-        background: linear-gradient(90deg, hsl(43, 97%, 71%), hsl(43, 98%, 58%));
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
         padding: 40px;
         text-align: center;
         font-family: gum;
         height: auto;
-        border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        margin: 20px auto;
-        width: 800px;
+        margin: auto;
+        height: 801px;
 
-        animation: autoblurAnimation linear both;
-        animation-timeline: view();
 
+        background-image: url(/static/images/guitarpaper.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+
+    
     }
 
-    .d4 .python .py {
-        height: 150px;
-        width: auto;
-        margin-bottom: 20px;
-    }
 
-    .d4 .python h2 {
-        font-size: 28px;
-        color: hsl(43, 50%, 20%);
+    .d4 .guitar h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
         margin-bottom: 15px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .python p {
-        font-size: 18px;
-        color: hsl(43, 30%, 25%);
+    .d4 .guitar h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .guitar p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
         margin-bottom: 20px;
         line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .python .btn {
-        background: linear-gradient(90deg, hsl(207, 47%, 41%), hsl(213, 41%, 59%));
-        color: rgb(255, 255, 255);
-        font-size: 19px;
+    .d4 .guitar p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .guitar .btn {
+        background: linear-gradient(90deg, hsl(37, 92%, 46%), hsl(39, 76%, 52%));
+        color: hsl(0, 0%, 100%);
+        margin-top: 20px;
+        font-size: 20px;
         text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
         padding: 10px 20px;
         border: none;
         border-radius: 50px;
         text-decoration: none;
+        width: 351px;
         transition: all 0.4s ease;
     }
 
-    .d4 .python .btn:hover {
+    .d4 .guitar .btn:hover {
         transform: translateY(-4px) scale(1.05) rotateZ(-1deg); 
         box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
     }
 
-    .d4 .java {
+    .d4 .piano {
         position: relative;
-        background: linear-gradient(90deg, hsl(48, 97%, 71%), hsl(48, 98%, 58%));
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
         padding: 40px;
         text-align: center;
         font-family: gum;
         height: auto;
-        border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        margin: 20px auto;
-        width: 800px;
+        margin: auto;
+        height: 801px;
 
-        animation: autoblurAnimation linear both;
-        animation-timeline: view();
+
+        background-image: url(/static/images/pianopaper.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
     }
 
-    .d4 .java .js {
-        height: 150px;
-        width: auto;
-        margin-bottom: 20px;
-    }
-
-    .d4 .java h2 {
-        font-size: 28px;
-        color: hsl(48, 50%, 20%);
+    .d4 .piano h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
         margin-bottom: 15px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .java p {
-        font-size: 18px;
-        color: hsl(48, 30%, 25%);
+    .d4 .piano h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .piano p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
         margin-bottom: 20px;
         line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .java .btn {
-        background: linear-gradient(90deg, hsl(42, 100%, 55%), hsl(46, 99%, 53%));
+    .d4 .piano p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .piano .btn {
+        background: linear-gradient(90deg, hsl(32, 71%, 30%), hsl(32, 70%, 41%));
         color: rgb(255, 255, 255);
         font-size: 19px;
         font-weight: 100;
         text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
         padding: 10px 20px;
+        margin-top: 20px;
         border: none;
         border-radius: 50px;
         text-decoration: none;
+        width: 351px;
         transition: all 0.4s ease;
     }
 
-    .d4 .java .btn:hover {
+    .d4 .piano .btn:hover {
         transform: translateY(-4px) scale(1.05) rotateZ(1deg); 
         box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
     }
 
-    .d4 .html {
+    .d4 .bass {
         position: relative;
-        background: linear-gradient(90deg, hsl(12, 97%, 71%), hsl(12, 98%, 58%));
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
         padding: 40px;
         text-align: center;
         font-family: gum;
         height: auto;
-        border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        margin: 20px auto;
-        width: 800px;
+        margin: auto;
+        height: 801px;
 
-        animation: autoblurAnimation linear both;
-        animation-timeline: view();
+
+        background-image: url(/static/images/basspaper.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
     }
 
-    .d4 .html .html-img {
-        height: 150px;
-        width: auto;
-        margin-bottom: 20px;
-    }
-
-    .d4 .html h2 {
-        font-size: 28px;
-        color: hsl(12, 50%, 20%);
+    .d4 .bass h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
         margin-bottom: 15px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .html p {
-        font-size: 18px;
-        color: hsl(12, 30%, 25%);
+    .d4 .bass h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .bass p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
         margin-bottom: 20px;
         line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .html .btn {
-        background: linear-gradient(90deg, hsl(12, 80%, 50%), hsl(12, 70%, 40%));
+    .d4 .bass p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .bass .btn {
+        background: linear-gradient(90deg, hsl(142, 9%, 41%), hsl(144, 6%, 33%));
         color: rgb(255, 255, 255);
         font-size: 19px;
         font-weight: 100;
@@ -437,52 +495,65 @@
         border: none;
         border-radius: 50px;
         text-decoration: none;
+        margin-top: 20px;
+        width: 351px;
         transition: all 0.4s ease;
     }
 
-    .d4 .html .btn:hover {
+    .d4 .bass .btn:hover {
         transform: translateY(-4px) scale(1.05) rotateZ(-1deg); 
         box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
     }
 
-    .d4 .css {
+    .d4 .electro {
         position: relative;
-        background: linear-gradient(90deg, hsl(204, 75%, 47%), hsl(204, 80%, 55%));
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
         padding: 40px;
         text-align: center;
         font-family: gum;
         height: auto;
-        border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        margin: 20px auto;
-        width: 800px;
+        margin: auto;
+        height: 801px;
 
-        animation: autoblurAnimation linear both;
-        animation-timeline: view();
+
+        background-image: url(/static/images/electronicpaper.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
     }
 
-    .d4 .css .css-img {
-        height: 150px;
-        width: auto;
-        margin-bottom: 20px;
-    }
-
-    .d4 .css h2 {
-        font-size: 28px;
-        color: hsl(200, 50%, 20%);
+    .d4 .electro h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
         margin-bottom: 15px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .css p {
-        font-size: 18px;
-        color: hsl(200, 30%, 25%);
+    .d4 .electro h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .electro p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
         margin-bottom: 20px;
         line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
     }
 
-    .d4 .css .btn {
-        background: linear-gradient(90deg, hsl(200, 48%, 32%), hsl(200, 60%, 43%));
+    .d4 .electro p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .electro .btn {
+        background: linear-gradient(90deg, hsl(329, 64%, 31%), hsl(340, 90%, 48%));
         color: rgb(255, 255, 255);
         font-size: 19px;
         font-weight: 100;
@@ -491,39 +562,17 @@
         border: none;
         border-radius: 50px;
         text-decoration: none;
+        margin-top: 20px;
+        width: 421px;
         transition: all 0.4s ease;
     }
 
-    .d4 .css .btn:hover {
+    .d4 .electro .btn:hover {
         transform: translateY(-4px) scale(1.05) rotateZ(1deg); 
         box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
     }
 
-    .why-choose-us {
-        background: linear-gradient(120deg, hsl(328, 79%, 66%), hsl(59, 76%, 64%));
-        padding: 40px;
-        text-align: center;
-        font-family: gum;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin: 40px auto;
 
-        animation: autoshowAnimation both;
-        animation-timeline: view(70% 5%);
-    }
-
-    .why-choose-us h2 {
-        font-size: 32px;
-        color: hsl(210, 50%, 20%);
-        margin-bottom: 20px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .why-choose-us p {
-        font-size: 18px;
-        color: hsl(210, 30%, 25%);
-        margin-bottom: 30px;
-        line-height: 1.6;
-    }
 
     .features {
         display: flex;
@@ -625,19 +674,19 @@
         transform: rotate(-9deg);
     }
 
-    @keyframes planeAnim{
+    @keyframes boatAnim{
         50%{
             transform: translateY(7px) rotateZ(-4deg);
         }
     }
 
-    .footer .plane{
+    .footer .boat{
         position: absolute;
         height: 131px;
         margin-top: -120px;
         right: 8%;
         transform: rotateZ(2deg);
-        animation: planeAnim ease-in-out 5s;
+        animation: boatAnim ease-in-out 5s;
         animation-iteration-count: infinite;
     }
 
@@ -830,11 +879,12 @@
         {% endif %}
         {% endwith %}
 
-    <!-- es aris saitis emblema -->
+
     <div class="d1">
-        <img src="/static/images/foxs.png" class="foxx">
-        <a href=""><h1>Foxicom</h1></a>
-        <!--<̶a̶ ̶h̶r̶e̶f̶=̶"̶"̶>̶<̶i̶m̶g̶ ̶s̶r̶c̶=̶"̶/̶s̶t̶a̶t̶i̶c̶/̶i̶m̶a̶g̶e̶s̶/̶l̶o̶g̶i̶n̶m̶a̶n̶a̶g̶e̶r̶w̶h̶i̶t̶e̶.̶p̶n̶g̶"̶ ̶c̶l̶a̶s̶s̶=̶"̶l̶g̶"̶>̶<̶/̶a̶>̶ -->
+        <img src="/static/images/foxs-guitar.png" class="foxx">
+        <a href="{{ url_for('routes.home')}}"><h1>Foxicom</h1></a>
+        <h2 class="mc">Music Courses</h2>
+
         <div class="dropdown" style="position: absolute; top: 30%; right: 30px;">
             <a href="#" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="/static/images/loginmanagerwhite.png" class="lg" style="height: 60px;">
@@ -852,7 +902,7 @@
             </ul>
         </div>
 
-        <!-- es aris ro tu ar xar daregistrirebuli carti sentvis ar gamocndeba da aseve rom roca amateb ragaceeb cartsi acvenebs ramdeni ramea damatebuli-->
+
         {% if current_user.is_authenticated %}
             <div>
                 <img src="/static/images/cartwhite.png" class="lg1" style="cursor:pointer;" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-controls="cartSidebar">
@@ -867,7 +917,6 @@
 
         {% endif %}
             
-        
     </div>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -877,13 +926,13 @@
                 </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav text-center">
-                    <img src="/static/images/home.png" style="height: 35px; position: absolute; margin-top: 11px; margin-left:-10px;">
+                    <img src="/static/images/pink-home.png" style="height: 35px; position: absolute; margin-top: 11px; margin-left:-10px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Home</a>
+                        <a class="nav-link" aria-current="page" href="{{ url_for('routes.home') }}">Home</a>
                     </li>
-                    <img src="/static/images/pink-non.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 150px;">
+                    <img src="/static/images/non.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 150px;">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('routes.music_courses') }}">Music</a>
+                        <a class="nav-link active" href="{{ url_for('routes.music_courses') }}">Music</a>
                     </li>
                     <img src="/static/images/pink-paint.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 315px;">
                     <li class="nav-item">
@@ -897,28 +946,18 @@
     <div class="d2">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper4.jpg" class="d-block w-100" alt="...">
-                </div>
                 <div class="carousel-item active" data-bs-interval="7000">
-                    <img src="/static/images/paper5.jpg" class="d-block w-100" alt="...">
+                    <img src="/static/images/paper-music1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" data-bs-interval="7000">
-                    <img src="/static/images/paper6.jpg" class="d-block w-100" alt="...">
+                    <img src="/static/images/paper-music2.jpg" class="d-block w-100" alt="...">
                 </div>
+                <div class="carousel-item" data-bs-interval="7000">
+                    <img src="/static/images/paper-music3.jpg" class="d-block w-100" alt="...">
+                </div>
+                
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -929,106 +968,101 @@
             </button>
         </div>
             <div class="tex autoshow">
-                <h1 style="color: hsl(220, 72%, 14%); text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.354); font-family: gum;">What Is This Website For?</h1>
+                <h1 style="color: hsl(220, 72%, 14%); text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.354); font-family: gum;">music courses</h1>
                 <br>
-                <h6 style="font-size: 18px;">Explore some of the best courses to enhance your coding skills and knowledge. You can learn other cool stuff as well </h6>
-                <ul style="list-style-type: none; padding: 0; margin-top: 20px; font-family: ba;">
-                    <li><img src="/static/images/star.png" alt="star" style="height: 24px; width: auto; margin-right: 5px; margin-top: -6px;"> Wide variety of courses</li>
-                    <li><img src="/static/images/black-cat.png" alt="cat" style="height: 24px; width: auto; margin-right: 5px; margin-top: -6px;"> Expert instructors</li>
-                    <li><img src="/static/images/electric-guitar.png" alt="guitar" style="height: 24px; width: auto; margin-right: 5px; margin-top: -6px;"> Flexible learning schedule</li>
-                </ul>
+                <h6 style="font-size: 18px;">
+                    Discover our engaging music courses designed for all skill levels! Learn to play instruments, understand music theory, and explore music production with expert instructors. Whether you're a beginner or looking to advance your skills, our flexible courses help you achieve your musical goals at your own pace.
+                </h6>
+                
+            
                 <a href="#courses"><button>Explore Courses</button></a>
                 <blockquote style="font-style: italic; margin-top: 20px;">
                     
                 </blockquote>
-                <img src="/static/images/emoticons.png" class="sticker">
-                <img src="/static/images/gift.png" class="sticker1">
+                <img src="/static/images/party.png" class="sticker">
+                <img src="/static/images/headphones.png" class="sticker1">
             </div>
     </div>
 
     <div class="d3" id="courses">
-        <img src="/static/images/hot-drink.png">
+        <img src="/static/images/snowfox.png">
         <h1>Lets Get Started!</h1>
     </div>
 
-    <div class="d4">
-        
-        <div class="python">
-            <img src="/static/images/pythonexe.png" class="py">
-            <div style="width: 700px; margin: auto;">
-                <h2>Learn Python Programming</h2>
-                <p>Python is a versatile and beginner-friendly programming language used for web development, data analysis, artificial intelligence, and more. Start your journey today!</p>
+        <div class="d4">
+
+        <div class="guitar">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Guitar Lessons</h2>
+                <p>Learn to play acoustic or electric guitar from scratch or improve your skills with advanced techniques and songs. Perfect for all levels!</p>
                 {% set cart = session.get('cart', []) %}
                 {% if current_user.is_authenticated %}
-                    {% if 'python' in cart %}
+                    {% if 'guitar' in cart %}
                         <button class="btn btn-primary" disabled>Added to cart</button>
                     {% else %}
-                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='python') }}">
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='guitar') }}">
                             <button type="submit" class="btn btn-primary">Add to cart</button>
                         </form>
                     {% endif %}
                 {% else %}
-                    <a href="{{ url_for('routes.python_course') }}" class="btn btn-primary">Explore Python Courses</a>
+                    <a href="{{ url_for('routes.guitar_course') }}" class="btn btn-primary">Explore Guitar Lessons</a>
                 {% endif %}
             </div>
         </div>
 
-        <div class="java">
-            <img src="/static/images/json.png" class="js">
-            <div style="width: 700px; margin: auto;">
-                <h2>Master JavaScript Programming</h2>
-                <p>JavaScript is the backbone of modern web development, enabling dynamic and interactive websites. Learn JavaScript to build powerful web applications and enhance your coding skills!</p>
+        <div class="piano">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Piano Lessons</h2>
+                <p>Master the piano with step-by-step lessons, from reading sheet music to playing your favorite songs and classical pieces.</p>
                 {% set cart = session.get('cart', []) %}
                 {% if current_user.is_authenticated %}
-                    {% if 'javascript' in cart %}
+                    {% if 'piano' in cart %}
                         <button class="btn btn-primary" disabled>Added to cart</button>
                     {% else %}
-                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='javascript') }}">
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='piano') }}">
                             <button type="submit" class="btn btn-primary">Add to cart</button>
                         </form>
                     {% endif %}
                 {% else %}
-                    <a href="{{ url_for('routes.javascript_course') }}" class="btn btn-primary">Explore JavaScript Courses</a>
+                    <a href="{{ url_for('routes.piano_course') }}" class="btn btn-primary">Explore Piano Lessons</a>
                 {% endif %}
             </div>
         </div>
 
-        <div class="html">
-            <img src="/static/images/html.png" class="html-img">
-            <div style="width: 700px; margin: auto;">
-                <h2>Learn HTML for Web Development</h2>
-                <p>HTML is the foundation of every website. Master HTML to structure your web pages and create stunning, responsive designs. Start building your web development skills today!</p>
+        <div class="bass">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Bass Guitar Lessons</h2>
+                <p>Groove with the bass! Learn bass guitar basics, techniques, and play along with popular songs in various genres.</p>
                 {% set cart = session.get('cart', []) %}
                 {% if current_user.is_authenticated %}
-                    {% if 'html' in cart %}
+                    {% if 'bass' in cart %}
                         <button class="btn btn-primary" disabled>Added to cart</button>
                     {% else %}
-                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='html') }}">
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='bass') }}">
                             <button type="submit" class="btn btn-primary">Add to cart</button>
                         </form>
                     {% endif %}
                 {% else %}
-                    <a href="{{ url_for('routes.html_course') }}" class="btn btn-primary">Explore HTML Courses</a>
+                    <a href="{{ url_for('routes.bass_course') }}" class="btn btn-primary">Explore Bass Guitar Lessons</a>
                 {% endif %}
             </div>
         </div>
 
-        <div class="css">
-            <img src="/static/images/css.png" class="css-img">
-            <div style="width: 700px; margin: auto;">
-                <h2>Learn CSS for Beautiful Designs</h2>
-                <p>CSS is the language of style and design for the web. Master CSS to create visually stunning and responsive websites. Start your journey to becoming a web designer today!</p>
+        <div class="electro">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Electronic Music Courses</h2>
+                <p>Produce your own electronic music! Learn about DAWs, synthesizers, beat making, mixing, and more from industry professionals.</p>
                 {% set cart = session.get('cart', []) %}
                 {% if current_user.is_authenticated %}
-                    {%if 'css' in cart %}
+                    {% if 'electromusic' in cart %}
                         <button class="btn btn-primary" disabled>Added to cart</button>
                     {% else %}
-                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='css') }}">
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='electromusic') }}">
                             <button type="submit" class="btn btn-primary">Add to cart</button>
-                        </form>
+                        </form>     
                     {% endif %}
                 {% else %}
-                    <a href="{{ url_for('routes.css_course') }}" class="btn btn-primary">Explore CSS Courses</a>
+                    <a href="{{ url_for('routes.electromusic_course') }}" class="btn btn-primary">Explore Electronic Music Courses</a>
                 {% endif %}
             </div>
         </div>
@@ -1040,9 +1074,9 @@
         <h2>Explore More Creative Courses</h2>
         <div class="special-features">
             <div class="special-feature">
-                <img src="/static/images/music.png" alt="Music Icon" class="special-icon">
-                <h3>Learn Music Production</h3>
-                <p>Create and mix music like a pro using modern software.</p>
+                <img src="/static/images/code.png" alt="Music Icon" class="special-icon">
+                <h3>leanr different coding languages</h3>
+                <p>master your coding skills to create different prjects</p>
                 <a href="{{ url_for('routes.music_courses') }}" class="btn blue">Explore Courses</a>
             </div>
             <div class="special-feature">
@@ -1055,23 +1089,22 @@
     </div>
 
 
-    <div class="why-choose-us">
-    <h2>Why Choose Us?</h2>
-    <p>We provide the best learning experience with expert instructors, flexible schedules, and a wide variety of courses tailored to your needs.</p>
-        <div class="features">
-            <div class="feature">
-                <img src="/static/images/cube.png" alt="Quality" class="icon">
-                <p>High-Quality Content</p>
-            </div>
-            <div class="feature">
-                <img src="/static/images/time.png" alt="Support" class="icon">
-                <p>24/7 Support</p>
-            </div>
-            <div class="feature">
-                <img src="/static/images/angel.png" alt="Trusted" class="icon">
-                <p>You Can Trust Us</p>
-            </div>
-        </div>
+    <div class="music-facts" style="background: linear-gradient(120deg, hsl(333, 96%, 83%), hsl(91, 76%, 84%)); padding: 40px; margin: 40px auto; box-shadow: 0 4px 10px hsla(0,0%,0%,0.07); text-align: center; animation: autoshowAnimation both; animation-timeline: view(70% 5%);">
+        <h2 style="font-family: gum; color: hsl(210, 50%, 20%); margin-bottom: 30px;">Did You Know?</h2>
+        <ul style="font-size: 18px; color: hsl(210, 30%, 25%); text-align: left; max-width: 700px; margin: 0 auto; list-style: none; padding: 0; font-family: gum;" >
+            <li style="margin-bottom: 32px; text-align: center;">
+                <img src="/static/images/mem.png" style="height: 163px; margin-bottom: 10px;">
+                <div>Learning music improves memory and concentration.</div>
+            </li>
+            <li style="margin-bottom: 32px; text-align: center;">
+                <img src="/static/images/str.png" style="height: 163px; margin-bottom: 10px;">
+                <div>Playing an instrument can reduce stress and boost creativity.</div>
+            </li>
+            <li style="margin-bottom: 32px; text-align: center;">
+                <img src="/static/images/electromusic.png" style="height: 163px; margin-bottom: 10px;">
+                <div>Electronic music production is one of the fastest-growing creative fields!</div>
+            </li>
+        </ul>
     </div>
 
         
@@ -1106,7 +1139,7 @@
                 <p>&copy; 2025 Foxicom. All rights reserved.</p>
             </div>
             {% if current_user.is_authenticated %}
-                <img src="/static/images/plane.png" class="plane">
+                <img src="/static/images/boat.png" class="boat">
             
             {% else %}
             <img src="/static/images/teddy-bear.png" class="ted">
