@@ -114,16 +114,39 @@
         color: hsla(325, 64%, 49%, 0.645);
         font-size: 30px;
         transition: color 0.3s ease;
+
+        background: linear-gradient(0deg, hsla(318, 43%, 46%, 0.641), hsla(318, 43%, 46%, 0.641)) no-repeat right bottom / 0 var(--bg-h);
+        transition: background-size 350ms;
+        --bg-h: 100%;
+
+        padding-bottom: 3px;
+        --bg-h: 6px;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: hsl(329, 66%, 49%);
-        cursor: pointer;
+    .navbar-nav .nav-link:where(:hover, :focus-visible) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
     }
+
 
     .navbar-nav .nav-link.active {
         color: hsl(0, 0%, 95%);
         font-size: 31px;
+        transition: color 0.3s ease;
+
+        background: linear-gradient(0deg, hsla(206, 39%, 81%, 0.641), hsla(206, 39%, 81%, 0.641)) no-repeat right bottom / 0 var(--bg-h);
+        transition: background-size 350ms;
+        --bg-h: 100%;
+
+        padding-bottom: 3px;
+        --bg-h: 6px;
+
+    }
+
+    .navbar-nav .nav-link.active:where(:hover, :focus-visible) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
+
     }
 
     .navbar-nav {
@@ -812,6 +835,7 @@
         top: 50%;
         transform: translateX(-50%) translateY(50%);
         opacity: 0.6;
+        z-index: -1;
     }
 
 
@@ -1079,7 +1103,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>About Us</h3>
+                    <h3>info</h3>
                     <p>Foxicom is your go-to platform for learning and growth. Explore courses, enhance your skills, and achieve your goals with us!</p>
                 </div>
                 <div class="col-md-4">
@@ -1146,7 +1170,10 @@
                 </button>
             </form>
         {% else %}
-            <p class="text-muted">Your cart is empty.</p>
+            <div style="display: flex; justify-content: center; align-items: center; height: 80px; position: relative;">
+                <img src="/static/images/cart.png" style="height: 39px; opacity: 0.6; z-index: -1; user-select: none; -webkit-user-drag: none;">
+            </div>
+            <p class="text-muted" style="text-align: center;">no items to show yet</p>
         {% endif %}
 
         <div class="shopcart">

@@ -71,5 +71,5 @@ def logout():
     logout_user()
     session['cart'] = []
     flash("Logged out successfully")
-    return redirect(url_for("routes.home"))
+    return redirect(request.referrer or url_for("routes.home"))
 

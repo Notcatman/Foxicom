@@ -21,6 +21,21 @@
             }, 3000);
         }
     });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const cardsContainer = document.querySelector('.music-facts-cards');
+        const cards = document.querySelectorAll('.music-fact-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                // Remove previous locks
+                cards.forEach(c => c.classList.remove('locked'));
+                // Lock this card
+                cardsContainer.classList.add('locked');
+                card.classList.add('locked');
+            });
+        });
+    });
 </script>
 
 <style>
@@ -123,16 +138,39 @@
         color: hsla(325, 64%, 49%, 0.645);
         font-size: 30px;
         transition: color 0.3s ease;
+
+        background: linear-gradient(0deg, hsla(318, 43%, 46%, 0.641), hsla(318, 43%, 46%, 0.641)) no-repeat right bottom / 0 var(--bg-h);
+        transition: background-size 350ms;
+        --bg-h: 100%;
+
+        padding-bottom: 3px;
+        --bg-h: 6px;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: hsl(329, 66%, 49%);
-        cursor: pointer;
+    .navbar-nav .nav-link:where(:hover, :focus-visible) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
     }
+
 
     .navbar-nav .nav-link.active {
         color: hsl(0, 0%, 95%);
         font-size: 31px;
+        transition: color 0.3s ease;
+
+        background: linear-gradient(0deg, hsla(206, 39%, 81%, 0.641), hsla(206, 39%, 81%, 0.641)) no-repeat right bottom / 0 var(--bg-h);
+        transition: background-size 350ms;
+        --bg-h: 100%;
+
+        padding-bottom: 3px;
+        --bg-h: 6px;
+
+    }
+
+    .navbar-nav .nav-link.active:where(:hover, :focus-visible) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
+
     }
 
     .navbar-nav {
@@ -861,6 +899,18 @@
         top: 50%;
         transform: translateX(-50%) translateY(50%);
         opacity: 0.6;
+        z-index: -1;
+    }
+
+    .music-facts-cards.locked .music-fact-card {
+        filter: blur(4px);
+        transition: filter 0.3s ease;
+        cursor: pointer;
+    }
+    .music-facts-cards.locked .music-fact-card.locked {
+        filter: none !important;
+        z-index: 1;
+        transition: filter 0.3s ease;
     }
 
 
@@ -928,11 +978,11 @@
                 <ul class="navbar-nav text-center">
                     <img src="/static/images/pink-home.png" style="height: 35px; position: absolute; margin-top: 11px; margin-left:-10px;">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ url_for('routes.home') }}">Home</a>
+                        <a class="nav-link" href="{{ url_for('routes.home') }}">Home</a>
                     </li>
                     <img src="/static/images/non.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 150px;">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('routes.music_courses') }}">Music</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('routes.music_courses') }}">Music</a>
                     </li>
                     <img src="/static/images/pink-paint.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 315px;">
                     <li class="nav-item">
@@ -1089,30 +1139,39 @@
     </div>
 
 
-    <div class="music-facts" style="background: linear-gradient(120deg, hsl(333, 96%, 83%), hsl(91, 76%, 84%)); padding: 40px; margin: 40px auto; box-shadow: 0 4px 10px hsla(0,0%,0%,0.07); text-align: center; animation: autoshowAnimation both; animation-timeline: view(70% 5%);">
-        <h2 style="font-family: gum; color: hsl(210, 50%, 20%); margin-bottom: 30px;">Did You Know?</h2>
-        <ul style="font-size: 18px; color: hsl(210, 30%, 25%); text-align: left; max-width: 700px; margin: 0 auto; list-style: none; padding: 0; font-family: gum;" >
-            <li style="margin-bottom: 32px; text-align: center;">
-                <img src="/static/images/mem.png" style="height: 163px; margin-bottom: 10px;">
-                <div>Learning music improves memory and concentration.</div>
-            </li>
-            <li style="margin-bottom: 32px; text-align: center;">
-                <img src="/static/images/str.png" style="height: 163px; margin-bottom: 10px;">
-                <div>Playing an instrument can reduce stress and boost creativity.</div>
-            </li>
-            <li style="margin-bottom: 32px; text-align: center;">
-                <img src="/static/images/electromusic.png" style="height: 163px; margin-bottom: 10px;">
-                <div>Electronic music production is one of the fastest-growing creative fields!</div>
-            </li>
-        </ul>
-    </div>
+    <section class="music-facts" style="margin: 60px auto 40px auto; height: 550px; background: linear-gradient(120deg, hsl(210, 76%, 84%), hsl(333, 86%, 81%)); box-shadow: 0 6px 24px hsla(0,0%,0%,0.10); padding: 48px 32px 32px 32px; text-align: center; font-family: gum; animation: autoshowAnimation both; animation-timeline: view(70% 5%);">
+        <h2 style="color: hsl(329, 66%, 49%); font-size: 2.2rem; margin-bottom: 28px; text-shadow: 1px 1px 2px hsla(0,0%,0%,0.08); letter-spacing: 1px;">
+            Fun Music Facts
+        </h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 36px;" class="music-facts-cards">
+            <div class="music-fact-card" style="background: hsl(0, 0%, 100%); border-radius: 16px; box-shadow: 0 2px 8px hsla(0,0%,0%,0.06); padding: 28px 20px 20px 20px; width: 240px; min-height: 280px; display: flex; flex-direction: column; align-items: center;">
+                <img src="/static/images/mem.png" alt="Memory" style="height: 153px; margin-bottom: 18px;">
+                <div style="font-size: 1.1rem; color: hsl(210, 30%, 25%); margin-top: auto;">
+                    Learning music improves memory and concentration.
+                </div>
+            </div>
+            <div class="music-fact-card" style="background: hsl(0, 0%, 100%); border-radius: 16px; box-shadow: 0 2px 8px hsla(0,0%,0%,0.06); padding: 28px 20px 20px 20px; width: 240px; min-height: 280px; display: flex; flex-direction: column; align-items: center;">
+                <img src="/static/images/str.png" alt="Stress Relief" style="height: 153px; margin-bottom: 18px;">
+                <div style="font-size: 1.1rem; color: hsl(210, 30%, 25%); margin-top: auto;">
+                    Playing an instrument can reduce stress and boost creativity.
+                </div>
+            </div>
+            <div class="music-fact-card" style="background: hsl(0, 0%, 100%); border-radius: 16px; box-shadow: 0 2px 8px hsla(0,0%,0%,0.06); padding: 28px 20px 20px 20px; width: 240px; min-height: 280px; display: flex; flex-direction: column; align-items: center;">
+                <img src="/static/images/electromusic.png" alt="Electronic Music" style="height: 153px; margin-bottom: 18px;">
+                <div style="font-size: 1.1rem; color: hsl(210, 30%, 25%); margin-top: auto;">
+                    Electronic music production is one of the fastest-growing creative fields!
+                </div>
+            </div>
+        </div>
+    </section>
+        
 
         
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>About Us</h3>
+                    <h3>info</h3>
                     <p>Foxicom is your go-to platform for learning and growth. Explore courses, enhance your skills, and achieve your goals with us!</p>
                 </div>
                 <div class="col-md-4">
@@ -1179,7 +1238,10 @@
                 </button>
             </form>
         {% else %}
-            <p class="text-muted">Your cart is empty.</p>
+            <div style="display: flex; justify-content: center; align-items: center; height: 80px; position: relative;">
+                <img src="/static/images/cart.png" style="height: 39px; opacity: 0.6; z-index: -1; user-select: none; -webkit-user-drag: none;">
+            </div>
+            <p class="text-muted" style="text-align: center;">no items to show yet</p>
         {% endif %}
 
         <div class="shopcart">
