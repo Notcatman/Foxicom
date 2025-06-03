@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxicom</title>
+    <title>Drawing courses | Foxicom</title>
     <link rel="icon" href="/static/images/foxs-art.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
@@ -24,7 +24,7 @@
 </script>
 
 <style>
-    /* amiti sevkmenit fonti romelic xelit chaviweret */
+
     @font-face {
         font-family: gum;
         src: url(/static/fonts/Gumzilla\ Regular.otf);
@@ -54,7 +54,7 @@
         justify-content: center;
         column-gap: 15px;
         font-family: gum;
-        background: linear-gradient(90deg, hsl(56, 92%, 54%), hsl(9, 86%, 58%), hsl(240, 26%, 24%), hsl(240, 38%, 30%), hsl(240, 26%, 24%), hsl(336, 73%, 59%), hsl(171, 73%, 59%) );
+        background: linear-gradient(90deg, hsl(43, 95%, 67%), hsl(240, 38%, 30%), hsl(240, 26%, 24%), hsl(325, 100%, 73%));
         position: relative;
         animation: YAnimation 1.2s ease;
     }
@@ -71,8 +71,15 @@
         animation: YAnimation 1.6s ease;
     }
 
+    .d1 .mc{
+        position: absolute;
+        color: hsl(325, 95%, 57%);
+        text-shadow: 0 -4px 1px hsl(251, 39%, 20%);
+        margin-top: 125px;
+        margin-left: 220px;
+        animation: YAnimation 1.5s ease;
+    }
 
-    /* amiti loginis da cartis buttonebs vaketebt (jer ar damisrulebia mere kidev dropdownic unda)*/
     .d1 .lg{
         transition: ease 0.3s;
     }
@@ -97,19 +104,9 @@
         cursor: pointer;
     }
 
-    .d1 .mc{
-        position: absolute;
-        text-shadow: 0 -4px 1px hsl(251, 39%, 20%);
-        margin-top: 125px;
-        margin-left: 220px;
-        animation: YAnimation 1.5s ease;
-        letter-spacing: -5px;
-    }
-
-
 
     .navbar {
-        background: linear-gradient(90deg, hsl(56, 92%, 54%), hsl(9, 86%, 58%), hsl(240, 26%, 24%), hsl(240, 38%, 30%), hsl(240, 26%, 24%), hsl(336, 73%, 59%), hsl(171, 73%, 59%) );
+        background: linear-gradient(90deg, hsl(43, 95%, 67%), hsl(240, 38%, 30%), hsl(240, 26%, 24%), hsl(325, 100%, 73%));
         padding: 10px 20px;
         font-family: gum;
         animation: YAnimation 1.3s ease;
@@ -162,26 +159,112 @@
         margin: 0 auto; 
     }
 
+    .d2{
+        height: 650px;
+        margin: auto;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: ba;
+    }
+
+    .d2 .tex{
+        width: 704px;
+        height: 581px;
+        padding: 25px;
+        border-radius: 30px;
+        border: 2px groove hsl(243, 90.70%, 25.30%);
+        text-align: center;
+        background: linear-gradient(180deg, hsl(214, 70.70%, 63.90%), hsl(196, 42.70%, 72.00%)) ;
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        z-index: 1;
+        transition: ease 0.4s;
+        animation: showAnimation 1s ease;
+    }
+
+    .d2 .tex:hover{
+        border-radius: 25px;
+        transform: scale(1.02) translateY(-8px);
+        transition: ease 0.4s;
+        box-shadow: 5px 5px 3px hsla(0, 0%, 0%, 0.433);
+    }
+
+    .d2 .tex button{
+        margin-top: 30px;
+        width: 220px;
+        height: 50px;
+        background: linear-gradient(90deg, hsl(252, 53.70%, 32.20%), hsl(268, 53.60%, 41.40%));
+        border-radius: 50px;
+        border: 0px;
+        font-family: gum;
+        text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
+        font-size: 17px;
+        color: hsl(208, 100%, 97%);
+        transition: ease 0.6s;
+        padding: 5px;
+    }
+
+    .d2 .tex button:hover{
+        width: 245px;
+        border-radius: 0px;
+        transition: ease 0.6s;
+    }
+
+    .d2 .sticker{
+        position: absolute;
+        height: 193px;
+        width: auto;
+    }
+    .d2 .sticker1{
+        position: absolute;
+        height: 193px;
+        width: auto;
+        margin-left: -200px;
+    }
+
+    .d2 img {
+    height: 500px; 
+    object-fit: cover;
+    }
+
+    .carousel{
+        animation: YAnimation 1.5s ease;
+        z-index: -1;
+        position: relative;
+    }
+
+    .carousel-control-prev, .carousel-control-next{
+        background-color: hsla(0, 0%, 0%, 0.035);
+    }
+
+    .d3{
+        height: 211px;
+        background: linear-gradient(90deg, hsl(336, 33%, 94%), hsl(337, 29%, 88%));
+        margin-top: 210px;
+        display: flex;
+        justify-content: center;
+        animation: autoshowAnimation 3s ease both;
+        animation-timeline: view(70% 5%);
+    }
+
+    .d3 h1{
+        font-family: gum;
+        margin-top: 80px;
+        font-size: 30px;
+        padding: 10px;
+    }
 
 
+   
     @keyframes showAnimation{
         from{
             opacity: 0;
-            transform: translateY(200px) scale(0.3);
+            transform: translateY(100px) scale(0.3);
         }to{
             opacity: 1;
             transform: translateY(0) scale(1);
-            
-        }
-    }
-
-    @keyframes AshowAnimation{
-        from{
-            opacity: 0;
-            transform: translateY(200px) scale(0.3) rotateZ(15deg);
-        }to{
-            opacity: 1;
-            transform: translateY(0) scale(1) rotateZ(0deg);
             
         }
     }
@@ -213,35 +296,594 @@
         }
     }
 
-    
 
-    .coming-soon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        animation: showAnimation 1.2s cubic-bezier(.42,0,.58,1) both;
-        margin: 40px auto 0 auto;
-        padding: 48px 32px 36px 32px;
+    .d4{
+        height: 3260px;
+        
+    }
+
+    .d4 .hov{
+            transition: ease-in-out 0.4s;
+        }
+
+    .d4 .guitar:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }
+
+    .d4 .piano:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }
+
+    .d4 .bass:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    }   
+
+    .d4 .electro:hover .hov{
+        transition: ease-in-out 0.4s;
+        transform: scale(1.05);
+    } 
+
+
+    .d4 .technicaldrawing {
         position: relative;
-    }
-
-    .coming-soon-img {
-        height: 253px;
-        object-fit: contain;
-        margin-top: 30px;
-        animation: AshowAnimation 2s cubic-bezier(1, 1, .50, 1) both;
-    }
-
-    .coming-soon-text {
-        font-family: gum;
-        font-size: 70px;
-        border: none;
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
+        padding: 40px;
         text-align: center;
-        letter-spacing: 2px;
-        color: hsl(240, 1%, 57%);
-        text-shadow: 1px 2px 2px hsl(345, 5%, 83%);        
-        animation: AshowAnimation 1.6s cubic-bezier(1, 1, .50, 1) both;
+        font-family: gum;
+        height: 801px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        
+        background-image: url('/static/images/technical.png');
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+    }
+
+
+
+    .d4 .technicaldrawing h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .technicaldrawing h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .technicaldrawing p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .technicaldrawing p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .technicaldrawing .btn {
+        background: linear-gradient(90deg, hsl(37, 92%, 46%), hsl(39, 76%, 52%));
+        color: hsl(0, 0%, 100%);
+        margin-top: 20px;
+        font-size: 20px;
+        text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        width: 351px;
+        transition: all 0.4s ease;
+    }
+
+    .d4 .technicaldrawing .btn:hover {
+        transform: translateY(-4px) scale(1.05) rotateZ(-1deg); 
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
+    }
+
+    .d4 .sketching {
+        position: relative;
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
+        padding: 40px;
+        text-align: center;
+        font-family: gum;
+        height: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        height: 801px;
+
+
+        background-image: url(/static/images/image.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+    }
+
+    .d4 .sketching h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .sketching h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .sketching p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .sketching p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .sketching .btn {
+        background: linear-gradient(90deg, hsl(32, 71%, 30%), hsl(32, 70%, 41%));
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        font-weight: 100;
+        text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        width: 351px;
+        transition: all 0.4s ease;
+    }
+
+    .d4 .sketching .btn:hover {
+        transform: translateY(-4px) scale(1.05) rotateZ(1deg); 
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
+    }
+
+    .d4 .artisticdrawing {
+        position: relative;
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
+        padding: 40px;
+        text-align: center;
+        font-family: gum;
+        height: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        height: 801px;
+
+
+        background-image: url(/static/images/artistic.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+    }
+
+    .d4 .artisticdrawing h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .artisticdrawing h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .artisticdrawing p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .artisticdrawing p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .artisticdrawing .btn {
+        background: linear-gradient(90deg, hsl(142, 9%, 41%), hsl(144, 6%, 33%));
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        font-weight: 100;
+        text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        margin-top: 20px;
+        width: 351px;
+        transition: all 0.4s ease;
+    }
+
+    .d4 .artisticdrawing .btn:hover {
+        transform: translateY(-4px) scale(1.05) rotateZ(-1deg); 
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
+    }
+
+    .d4 .stippling {
+        position: relative;
+        background: linear-gradient(90deg, hsl(30, 1%, 59%), hsl(45, 3%, 71%));
+        padding: 40px;
+        text-align: center;
+        font-family: gum;
+        height: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: auto;
+        height: 801px;
+
+
+        background-image: url(/static/images/stippling.jpg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+    }
+
+    .d4 .stippling h2 {
+        font-size: 38px;
+        color: hsl(0, 0%, 100%);
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .stippling h2:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .stippling p {
+        font-size: 21px;
+        color: hsl(30, 50%, 99%);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.53);
+        transition: ease 0.4s;
+    }
+
+    .d4 .stippling p:hover{
+        cursor: context-menu;
+        transform: translateY(-5px);
+        transition: ease 0.4s;
+    }
+
+    .d4 .stippling .btn {
+        background: linear-gradient(90deg, hsl(329, 64%, 31%), hsl(340, 90%, 48%));
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        font-weight: 100;
+        text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.535);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        margin-top: 20px;
+        width: 421px;
+        transition: all 0.4s ease;
+    }
+
+    .d4 .stippling .btn:hover {
+        transform: translateY(-4px) scale(1.05) rotateZ(1deg); 
+        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.399); 
+    }
+
+
+
+    .features {
+        display: flex;
+        justify-content: center;
+        column-gap: 40px;
+    }
+
+    .feature {
+        text-align: center;
+        max-width: 150px;
+    }
+
+    .feature .icon {
+        height: 143px;
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+    .feature p {
+        font-size: 18px;
+        color: hsl(210, 30%, 25%);
+        margin: 0;
+    }
+
+    /*es aris chaskrolva gilakis daweraze*/
+    html {
+    scroll-behavior: smooth;
+    }
+
+    /* footeri*/
+
+    .footer {
+        background: linear-gradient(90deg, hsl(240, 26%, 24%), hsl(240, 27%, 34%));
+        color: hsl(0, 0%, 95%);
+        padding: 40px 20px;
+        font-family: gum;
+        height: auto;
+    }
+
+    .footer h3 {
+        font-size: 25px;
+        margin-bottom: 15px;
+        color: hsl(43, 99%, 68%);
+        text-shadow: 0px 3px 10px hsla(0, 0%, 0%, 0.574);
+    }
+
+    .footer p, .footer a {
+        font-size: 16px;
+        font-weight: 100;
+        color: hsl(0, 20%, 97%);
+        text-decoration: none;
+        text-shadow: 0px 3px 10px hsla(0, 0%, 0%, 0.574);
+    }
+
+    .footer a:hover {
+        color: hsl(43, 99%, 68%);
+    }
+
+
+    .footer .bt1{
+        border-radius: 50px;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+        background: linear-gradient(120deg, hsl(33, 92%, 54%), hsl(24, 86%, 44%));
+        text-shadow: 0px 3px 10px hsla(0, 0%, 0%, 0.574);
+        transition: 0.5s ease;
+    }
+
+    .footer .bt2{
+        margin-left: 15px;
+        border: none;
+        border-radius: 50px;
+        padding: 10px;
+        font-size: 18px;
+        text-shadow: 0px 3px 10px hsla(0, 0%, 0%, 0.574);
+        transition: 0.5s ease;
+    }
+
+    .footer .bt1:hover{
+        transform: scale(1.05) rotateZ(-2deg) translateY(-4px);
+        transition: 0.5s ease;
+        color: hsl(208, 100%, 97%);
+        box-shadow: 3px 3px 2px hsla(0, 0%, 0%, 0.503);
+    }
+
+    .footer .bt2:hover{
+        transform: scale(1.05) rotateZ(2deg) translateY(-4px);
+        transition: 0.5s ease;
+        color: hsl(208, 100%, 97%);
+        box-shadow: 3px 3px 2px hsla(0, 0%, 0%, 0.503);
+    }
+
+    .footer .ted{
+        position: absolute;
+        height: 211px;
+        margin-top: -190px;
+        right: 2%;
+        transform: rotate(-9deg);
+    }
+
+    @keyframes boatAnim{
+        50%{
+            transform: translateY(7px) rotateZ(-4deg);
+        }
+    }
+
+    .footer .boat{
+        position: absolute;
+        height: 131px;
+        margin-top: -120px;
+        right: 8%;
+        transform: rotateZ(2deg);
+        animation: boatAnim ease-in-out 5s;
+        animation-iteration-count: infinite;
+    }
+
+    
+    .special-courses {
+        background: linear-gradient(120deg, hsl(210, 80%, 92%), hsl(331, 100%, 96%));
+        padding: 40px 0;
+        text-align: center;
+        font-family: gum;
+        margin: 40px auto;
+        box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.07);
+        border-radius: 18px;
+        max-width: 1100px;
+
+        animation: autoshowAnimation both;
+        animation-timeline: view(70% 5%);
+    }
+
+    .special-courses h2 {
+        font-size: 32px;
+        color: hsl(210, 50%, 20%);
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.08);
+    }
+
+    .special-features {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .special-feature {
+        background: hsl(0, 0%, 100%);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.08);
+        padding: 30px 28px 28px 28px;
+        max-width: 320px;
+        margin: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .special-feature:hover {
+        transform: translateY(-8px) scale(1.00);
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.205);
+    }
+
+    .special-icon {
+        height: 143px;
+        width: auto;
+        margin-bottom: 18px;
+    }
+
+    .special-feature h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        color: hsl(210, 60%, 30%);
+    }
+
+    .special-feature p {
+        font-size: 16px;
+        color: hsl(210, 30%, 25%);
+        margin-bottom: 18px;
+    }
+
+    .special-feature .btn.blue {
+        background-color: hsl(211, 100%, 50%);
+        color: hsl(0, 0%, 100%);
+        text-shadow: 1px 1px 2px hsl(0, 0%, 0%);
+        padding: 8px 18px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: ease 0.5s;
+    }
+
+    .special-feature .btn.blue:hover {
+        background-color: hsl(211, 100%, 35%);
+        transform: translateY(-5px);
+        box-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.534);
+        transition: ease 0.5s;
+    }
+
+
+    .dropdown-item:hover{
+        transition: ease 0.3s;
+        background: linear-gradient(90deg, hsl(189, 19%, 73%), hsl(217, 63%, 82%));
+    }
+
+    .dropdown-menu.flip {
+        transition: opacity 0.3s, transform 0.3s;
+        transform: rotateX(-90deg);
+    }
+    .dropdown.show .dropdown-menu.flip {
+        transform: rotateX(0);
+    }
+
+    .custom-alert {
+        position: fixed;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background: linear-gradient(90deg, hsl(43, 99%, 68%), hsl(348, 77%, 53%));
+        color: hsl(240, 26%, 24%);
+        border: none;
+        border-radius: 18px;
+        font-family: gum;
+        font-size: 1.2rem;
+        font-weight: 100;
+        box-shadow: 0 4px 16px hsla(0,0%,0%,0.10);
+        padding: 18px 32px;
+        max-width: 500px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px hsla(0,0%,0%,0.08);
+        animation: alertAnimation 0.8s;
+        text-align: center;
+    }
+
+    .offcanvas{
+        background: linear-gradient(120deg, hsl(47, 80%, 88%), hsl(352, 59%, 90%));
+        font-family: gum;
+        font-weight: 100;
+    }
+
+    .offcanvas h5{
+        color: hsl(240, 49%, 16%);
+    }
+
+    .offcanvas .checkoutbtn{
+        margin-top: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50px;
+        border: none;
+        background: linear-gradient(120deg, hsl(123, 100%, 37%), hsl(120, 100%, 33%));
+        padding: 10px 15px;
+        color: hsl(0, 0%, 100%);
+        text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.565);
+        width: 250px;
+        font-weight: 100;
+        font-size: large;
+        transition: ease 0.5s;
+    }
+
+    .offcanvas .checkoutbtn:hover{
+        transform: translateY(-4px);
+        width: 270px;
+        box-shadow: 3px 4px 5px hsla(0, 0%, 0%, 0.59);
+        transition: ease 0.5s;
+    }
+
+    .offcanvas .btn{
+        border: none;
+        background: transparent;
+        transition: ease 0.4s;
+    }
+
+    .offcanvas .btn:hover{
+        background: transparent;
+        border: none;
+        transform: translateY(-2px);
+        transition: ease-in-out 0.4s;
+    }
+
+    .offcanvas .shopcart img{
+        height: 153px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(50%);
+        opacity: 0.6;
+        z-index: -1;
     }
 
 
@@ -249,31 +891,54 @@
 </style>
 <body>
 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="custom-alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
 
     <div class="d1">
         <img src="/static/images/foxs-art.png" class="foxx">
-        <a href=""><h1>Foxicom</h1></a>
-        <h2 class="mc">
-            <span style="color: hsl(350, 86%, 65%);">d</span>
-            <span style="color: hsl(160, 100%, 75%);">r</span>
-            <span style="color: hsl(43, 99%, 68%);">a</span>
-            <span style="color: hsl(124, 74%, 68%);">w</span>
-            <span style="color: hsl(348, 77%, 53%);">i</span>
-            <span style="color: hsl(25, 86%, 58%);">n</span>
-            <span style="color: hsl(329, 74%, 52%);">g</span>
-            <span>  </span>
-            <span style="color: hsl(302, 78%, 61%);">c</span>
-            <span style="color: hsl(208, 89%, 50%);">o</span>
-            <span style="color: hsl(0, 77%, 53%);">u</span>
-            <span style="color: hsl(100, 74%, 58%);">r</span>
-            <span style="color: hsl(51, 95%, 49%);">s</span>
-            <span style="color: hsl(177, 96%, 50%);">e</span>
-            <span style="color: hsl(334, 100%, 50%);">s</span>
-        </h2>
+        <a href="{{ url_for('routes.home')}}"><h1>Foxicom</h1></a>
+        <h2 class="mc">Drawing <span style="color: hsl(208, 63%, 45%);">courses</span></h2>
+
+        <div class="dropdown" style="position: absolute; top: 30%; right: 30px;">
+            <a href="#" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/static/images/loginmanagerwhite.png" class="lg" style="height: 60px;">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end flip" aria-labelledby="loginDropdown">
+                {% if current_user.is_authenticated %}
+                    <li><span class="dropdown-item-text">{{ current_user.username }}</span></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ url_for('log.logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a class="dropdown-item" href="{{ url_for('log.login') }}">Log In</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ url_for('log.register') }}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
 
 
+        {% if current_user.is_authenticated %}
+            <div>
+                <img src="/static/images/cartwhite.png" class="lg1" style="cursor:pointer;" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-controls="cartSidebar">
+                {% set cart = session.get('cart', []) %}
+                {% if cart and cart|length > 0 %}
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 1rem; font-weight: 100; margin-top: 65px; margin-left: -120px;">
+                        {{ cart|length }}
+                    </span>
+                {% endif %}
+            </div>
+        {% else %}
+
+        {% endif %}
             
-        
     </div>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -285,7 +950,7 @@
                 <ul class="navbar-nav text-center">
                     <img src="/static/images/pink-home.png" style="height: 35px; position: absolute; margin-top: 11px; margin-left:-10px;">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="{{ url_for('routes.home') }}">Home</a>
                     </li>
                     <img src="/static/images/pink-non.png" style="height: 35px; position: absolute; margin-top: 13px; margin-left: 150px;">
                     <li class="nav-item">
@@ -300,14 +965,254 @@
         </div>
     </nav>
 
-    <div class="coming-soon-container">
-        <div class="coming-soon-text">
-            Coming Soon
+    <div class="d2">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="7000">
+                    <img src="/static/images/blog.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="7000">
+                    <img src="/static/images/art.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="7000">
+                    <img src="/static/images/picasso.webp" class="d-block w-100" alt="...">
+                </div>
+                
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <img src="/static/images/soon.png" class="coming-soon-img">
+            <div class="tex autoshow">
+                <h1 style="color: hsl(220, 72%, 14%); text-shadow: 2px 2px 3px hsla(0, 0%, 0%, 0.354); font-family: gum;">drawing courses</h1>
+                <br>
+                <h6 style="font-size: 18px;">
+                    Discover our engaging drawing courses designed for all skill levels! Learn the fundamentals of sketching, master technical drawing, and explore creative illustration with guidance from experienced instructors. Whether you're just starting out or aiming to refine your technique, our flexible courses support your artistic growth and help you express your ideas with confidence and precision.
+                </h6>
+                
+            
+                <a href="#courses"><button>Explore Courses</button></a>
+                <blockquote style="font-style: italic; margin-top: 20px;">
+                    
+                </blockquote>
+                <img src="/static/images/diploma.png" class="sticker">
+                <img src="/static/images/business.png" class="sticker1">
+            </div>
+    </div>
+
+    <div class="d3" id="courses">
+        <img src="/static/images/warm-water.png">
+        <h1>Lets Get Started!</h1>
+    </div>
+
+        <div class="d4">
+
+        <div class="technicaldrawing">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Technical Drawing Lessons</h2>
+                <p>Learn the fundamentals of technical drawing or enhance your precision with advanced drafting techniques and tools. Ideal for beginners and experienced designers alike!</p>
+                {% set cart = session.get('cart', []) %}
+                {% if current_user.is_authenticated %}
+                    {% if 'technicaldrawing' in cart %}
+                        <button class="btn btn-primary" disabled>Added to cart</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='technicaldrawing') }}">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('routes.technical_drawing') }}" class="btn btn-primary">Explore Technical Drawing Lessons</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="sketching">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Sketching Lessons</h2>
+                <p>Learn the basics of sketching or refine your artistic skills with advanced techniques in shading, perspective, and composition. Perfect for beginners and creative minds ready to level up!</p>
+                {% set cart = session.get('cart', []) %}
+                {% if current_user.is_authenticated %}
+                    {% if 'sketching' in cart %}
+                        <button class="btn btn-primary" disabled>Added to cart</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='sketching') }}">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('routes.sketching') }}" class="btn btn-primary">Explore Sketching Lessons</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="artisticdrawing">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Artistic Drawing Lessons</h2>
+                <p>Learn the foundations of artistic drawing or elevate your skills with expressive techniques in shading, composition, and style. Perfect for aspiring artists and seasoned creatives ready to unlock their full visual potential</p>
+                {% set cart = session.get('cart', []) %}
+                {% if current_user.is_authenticated %}
+                    {% if 'artisticdrawing' in cart %}
+                        <button class="btn btn-primary" disabled>Added to cart</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='artisticdrawing') }}">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('routes.artistic_drawing') }}" class="btn btn-primary">Explore Artistic Drawing Lessons</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="stippling">
+            <div style="width: 700px; margin: auto; margin-top: 250px;" class="hov">
+                <h2>Stippling Lessons</h2>
+                <p>Learn the art of stippling to create stunning images using only dots. Master techniques for shading, texture, and depth through precision and patience. Perfect for beginners and experienced artists seeking fine detail and meditative creativity!</p>
+                {% set cart = session.get('cart', []) %}
+                {% if current_user.is_authenticated %}
+                    {% if 'stippling' in cart %}
+                        <button class="btn btn-primary" disabled>Added to cart</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('routes.add_to_cart', course='stippling') }}">
+                            <button type="submit" class="btn btn-primary">Add to cart</button>
+                        </form>     
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('routes.stippling') }}" class="btn btn-primary">Explore Stippling Lessons</a>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
 
+    <div class="special-courses">
+        <h2>Explore More Creative Courses</h2>
+        <div class="special-features">
+            <div class="special-feature">
+                <img src="/static/images/code.png" alt="Music Icon" class="special-icon">
+                <h3>learn different coding languages</h3>
+                <p>master your coding skills to create projects</p>
+                <a href="{{ url_for('routes.home') }}" class="btn blue">Explore Courses</a>
+            </div>
+            <div class="special-feature">
+                <img src="/static/images/music.png" alt="Drawing Icon" class="special-icon">
+                <h3>Your Musical Journey Starts Here</h3>
+                <p>Create and mix music like a pro using modern software. </p>
+                <a href="{{ url_for('routes.music_courses') }}" class="btn blue">Explore Courses</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="drawing-facts" style="background: linear-gradient(120deg, hsl(44, 94%, 85%), hsl(204, 83%, 88%)); padding: 40px; margin: 40px auto; box-shadow: 0 4px 10px hsla(0,0%,0%,0.07); text-align: center; animation: autoshowAnimation both; animation-timeline: view(70% 5%);">
+    <h2 style="font-family: gum; color: hsl(210, 50%, 20%); margin-bottom: 30px;">Did You Know?</h2>
+    <ul style="font-size: 18px; color: hsl(210, 30%, 25%); text-align: left; max-width: 700px; margin: 0 auto; list-style: none; padding: 0; font-family: gum;">
+        <li style="margin-bottom: 32px; text-align: center;">
+            <img src="/static/images/draww.png" style="height: 163px; margin-bottom: 10px;">
+            <div>Drawing boosts memory, concentration, and visual processing skills.</div>
+        </li>
+        <li style="margin-bottom: 32px; text-align: center;">
+            <img src="/static/images/dr.png" style="height: 163px; margin-bottom: 10px;">
+            <div>Sketching and doodling can reduce stress and enhance mindfulness.</div>
+        </li>
+        <li style="margin-bottom: 32px; text-align: center;">
+            <img src="/static/images/bunnyy.png" style="height: 163px; margin-bottom: 10px;">
+            <div>Digital drawing is transforming industries from animation to game design!</div>
+        </li>
+    </ul>
+</div>
+
+
+        
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>Foxicom is your go-to platform for learning and growth. Explore courses, enhance your skills, and achieve your goals with us!</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="{{ url_for('routes.aboutus') }}">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    {% if current_user.is_authenticated %}
+                        <h3>Hey {{ current_user.username }}</h3>
+                        <p>Ready to continue learning? Check out your courses and discover something new</p>
+                        <a href="{{ url_for('log.logout') }}" class="btn btn-primary bt1">Log Out</a>
+                    
+                    {% else %}
+                    <h3>join us</h3>
+                    <a href="{{ url_for('log.login') }}" class="btn btn-primary bt1">Log In</a>
+                    <a href="{{ url_for('log.register') }}" class="btn btn-primary bt2">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 Foxicom. All rights reserved.</p>
+            </div>
+            {% if current_user.is_authenticated %}
+                <img src="/static/images/treeboat.png" class="boat">
+            
+            {% else %}
+            <img src="/static/images/teddy-bear.png" class="ted">
+            {% endif %}
+        </div>
+    </footer>
+
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cartSidebarLabel">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="cart-items">
+        {% set cart = session.get('cart', []) %}
+        {% if cart %}
+            {% set total = 0 %}
+            <ul class="list-group" style="gap: 15px;">
+                {% for item in cart %}
+                    {% set price = course_cost.get(item, 0) %}
+                    {% set total = total + price %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="background: linear-gradient(120deg, hsl(240, 9%, 96%), hsl(0, 3%, 94%)); border: 2px solid hsla(0, 0%, 0%, 0.357);">
+                        <span>
+                            {{ item.title() }}
+                            <span class="badge bg-warning text-dark ms-2" style="font-size: medium; font-weight: 100;">{{ price }}$</span>
+                        </span>
+                        <form method="POST" action="{{ url_for('routes.remove_from_cart', course=item) }}" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger" title="Remove" style="font-family: ba;"><img src="/static/images/delete.png" style="height: 24px;"></button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+    
+            <form action="{{ url_for('routes.checkout') }}" method="get">
+                <button class="checkoutbtn" {% if not cart %}disabled{% endif %}>
+                    Checkout
+                </button>
+            </form>
+        {% else %}
+            <div style="display: flex; justify-content: center; align-items: center; height: 80px; position: relative;">
+                <img src="/static/images/cart.png" style="height: 39px; opacity: 0.6; z-index: -1; user-select: none; -webkit-user-drag: none;">
+            </div>
+            <p class="text-muted" style="text-align: center;">no items to show yet</p>
+        {% endif %}
+
+        <div class="shopcart">
+            <img src="/static/images/shop.png">
+        </div>
+
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

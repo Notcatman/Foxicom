@@ -17,7 +17,12 @@ def checkout():
         'guitar': 100,
         'piano': 60,
         'bass': 100,
-        'electromusic': 75
+        'electromusic': 75,
+        'sketching': 40,
+        'stippling': 45,
+        'artisticdrawing': 50,
+        'technicaldrawing': 55
+        
     }
     total = sum(COURSE_COST.get(item, 0) for item in cart)
     if not cart:
@@ -39,7 +44,11 @@ def music_courses():
         'guitar': 100,
         'piano': 60,
         'bass': 100,
-        'electromusic': 75
+        'electromusic': 75,
+        'sketching': 40,
+        'stippling': 45,
+        'artisticdrawing': 50,
+        'technicaldrawing': 55
     }
     return render_template('music_courses.html', course_cost=COURSE_COST)
 
@@ -53,7 +62,11 @@ def home():
         'guitar': 100,
         'piano': 60,
         'bass': 100,
-        'electromusic': 75
+        'electromusic': 75,
+        'sketching': 40,
+        'stippling': 45,
+        'artisticdrawing': 50,
+        'technicaldrawing': 55
     }
     return render_template('index.html', course_cost=COURSE_COST)
 
@@ -78,9 +91,23 @@ def aboutus():
     return render_template('aboutus.html')
 
 
-@routes.route('/drawing courses')
+@routes.route('/drawing_courses')
 def drawing_courses():
-    return render_template('drawing_courses.html')
+    COURSE_COST = {
+        'python': 70,
+        'javascript': 50,
+        'html': 25,
+        'css': 25,
+        'guitar': 100,
+        'piano': 60,
+        'bass': 100,
+        'electromusic': 75,
+        'sketching': 40,
+        'stippling': 45,
+        'artisticdrawing': 50,
+        'technicaldrawing': 55
+    }
+    return render_template('drawing_courses.html', course_cost=COURSE_COST)
 
 @routes.route('/guitar')
 def guitar_course():
@@ -97,6 +124,22 @@ def bass_course():
 @routes.route('/elecronic')
 def electromusic_course():
     return render_template("electromusic.html")
+
+@routes.route('/technicaldrawing')
+def technical_drawing():
+    return render_template('technical_drawing.html')
+
+@routes.route('/sketching')
+def sketching():
+    return render_template('sketching.html')
+
+@routes.route('/stippling')
+def stippling():
+    return render_template('stippling.html')
+
+@routes.route('/artisticdrawing')
+def artistic_drawing():
+    return render_template('artistic_drawing.html')
 
 
 @routes.app_errorhandler(404)
