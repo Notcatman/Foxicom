@@ -141,6 +141,10 @@ def stippling():
 def artistic_drawing():
     return render_template('artistic_drawing.html')
 
+@routes.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', user=current_user)
 
 @routes.app_errorhandler(404)
 def page_not_found(e):
