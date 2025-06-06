@@ -12,3 +12,4 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    profile_pic = db.Column(db.String(120), default='/static/images/business.png')

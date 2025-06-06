@@ -1,5 +1,6 @@
-from flask import render_template, Blueprint, redirect, url_for, session, flash, request
+from flask import render_template, Blueprint, redirect, url_for, session, flash, request, jsonify
 from flask_login import login_required, current_user
+from models import db
 
 routes = Blueprint('routes', __name__)
 
@@ -69,6 +70,18 @@ def home():
         'technicaldrawing': 55
     }
     return render_template('index.html', course_cost=COURSE_COST)
+
+
+@routes.route('/update_profile_pic', methods=['POST'])
+@login_required
+def update_profile_pic():
+    data = request.get_json()
+    pic_url = data.get('pic_url')
+    if pic_url:
+        current_user.profile_pic = pic_url
+        db.session.commit()
+        return jsonify({'success': True})
+    return jsonify({'success': False}), 400
 
 @routes.route('/python')
 def python_course():
@@ -141,10 +154,10 @@ def stippling():
 def artistic_drawing():
     return render_template('artistic_drawing.html')
 
-@routes.route('/profile')
+@routes.route('/account')
 @login_required
-def profile():
-    return render_template('profile.html', user=current_user)
+def account():
+    return render_template('account.html', user=current_user)
 
 @routes.app_errorhandler(404)
 def page_not_found(e):

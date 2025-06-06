@@ -937,13 +937,19 @@
 
         <div class="dropdown" style="position: absolute; top: 30%; right: 30px;">
             <a href="#" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="/static/images/loginmanagerwhite.png" class="lg" style="height: 60px;">
+                {% if current_user.is_authenticated %}
+                    <img src="{{ current_user.profile_pic or '/static/images/business.png' }}" class="lg" style="height: 60px; border-radius: 50%; object-fit: cover; background: #fff; border: 2px solid #eee;">
+                {% else %}
+                    <img src="/static/images/loginmanagerwhite.png" class="lg" style="height: 60px;">
+                {% endif %}
             </a>
             <ul class="dropdown-menu dropdown-menu-end flip" aria-labelledby="loginDropdown">
                 {% if current_user.is_authenticated %}
-                    <li><span class="dropdown-item-text">{{ current_user.username }}</span></li>
+                    <li><a class="dropdown-item" href="{{ url_for('routes.account') }}">{{ current_user.username }}</a></li>
+                    <img src="/static/images/settings.png" style="height: 23px; position: absolute; right: 5%; margin-top: -28px;">
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{{ url_for('log.logout') }}">Log Out</a></li>
+                    <img src="/static/images/sign-out-alt.png" style="height: 23px; position: absolute; right: 5%; margin-top: -28px;">                    
                 {% else %}
                     <li><a class="dropdown-item" href="{{ url_for('log.login') }}">Log In</a></li>
                     <li><hr class="dropdown-divider"></li>
